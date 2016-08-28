@@ -546,13 +546,18 @@ form {
     background: #fff;
     color: #f87602;
 
-    .navbar .container {
+    .container {
         width: 97%;
     }
 
-    .navbar .nav > li > a {
+
+    .nav > li > a {
         font-size: 13px;
         color: #f87602;
+        &:active, &:hover, &:focus {
+            background-color: @laranjapr;
+            color: #fff;
+        }
     }
 
     .navbar i {
@@ -572,10 +577,14 @@ form {
     .navbar .badge {
         margin-left: 5px;
 
+    }
     .navbar-light {
         background: #fff;
         color: #f87602;
         }
+    .nav li.current > a {
+        background-color: #f87602;
+        color: #fff;
     }
 }
 
@@ -1915,6 +1924,8 @@ a {
     }
 }
 
+
+
 @media (max-width: 480px) {
     input.form-control, select.form-control, textarea.form-control {
         width: 70%;
@@ -1973,16 +1984,12 @@ a {
     }
 }
 
-.nav li.current {
-    background-color: #f87602;
-}
-
 .content {
     min-height: 100%;
 }
 
 .container.login {
-    margin-top: 0;
+    margin-top: -15px;
     margin-bottom: 0;
     padding: 0 3%; 
     padding-top: 30%;
@@ -2039,8 +2046,6 @@ a {
     border: none;
   }
 
-  
-
   img {
       margin: 0 auto;
       margin-bottom: 20px;
@@ -2054,7 +2059,7 @@ a {
 .widget.wviolet {
 
     .progress-bar {
-        background-color: @laranjapg;
+        background-color: @laranjapr;
     }
 
     .text-info {
