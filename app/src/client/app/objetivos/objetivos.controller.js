@@ -16,7 +16,6 @@
             function activate() {
             var promises = [getObjectives()];
                 return $q.all(promises).then(function() {
-                    logger.info('Activated Objetivos View');
                 });
             }
 

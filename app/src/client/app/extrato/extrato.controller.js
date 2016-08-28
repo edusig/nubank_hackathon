@@ -14,9 +14,6 @@
 
         function activate() {
             var promises = getExtrato();
-            return $q.all(promises).then(function () {
-                logger.info('Activated Extrato View');
-            });
         }
 
         function getExtrato() {
