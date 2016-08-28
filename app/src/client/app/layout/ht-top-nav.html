@@ -13,6 +13,9 @@
         <li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
           <a ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
         </li>
+        <li class="nlightblue fade-selection-animation" ng-if="vm.logged" >
+          <a ng-click="vm.doLogout()">Sair</a>
+        </li>
       </ul>
     </div>
   </div>
