@@ -4,8 +4,15 @@
 @color_warning: #f88529;
 @color_important: #fa3031;
 @color_violet: #932ab6;
+@laranjadf: #f87602;
+@laranjahv: #ff9500;
+@laranjapr: #ff9b02;
+@pumpkin: #d35400;
+
+
 
 @import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/css?family=Comfortaa';
 
 * {
     /*-webkit-box-shadow: none;
@@ -201,11 +208,13 @@ a.btn {
 /* Button colors */
 
 .btn.btn-primary {
-    background: @color_blue;
+    background:  #f87602;
+    color: #fff;
 }
 
     .btn.btn-primary:hover {
-        background: #0f608b;
+        background:  #ff9500;
+        color: #fff;
     }
 
 .btn.btn-info {
@@ -217,11 +226,13 @@ a.btn {
     }
 
 .btn.btn-success {
-    background: @color_success;
+    background:  #f87602;
+    color: #fff;
 }
 
     .btn.btn-success:hover {
-        background: #36a530;
+        background:  #ff9500;
+        color: #fff;
     }
 
 .btn.btn-warning {
@@ -532,8 +543,8 @@ form {
 /* Navbar */
 
 .navbar {
-    background: #000;
-}
+    background: #fff;
+    color: #f87602;
 
     .navbar .container {
         width: 97%;
@@ -541,7 +552,7 @@ form {
 
     .navbar .nav > li > a {
         font-size: 13px;
-        color: #fff;
+        color: #f87602;
     }
 
     .navbar i {
@@ -549,8 +560,8 @@ form {
     }
 
     .navbar .caret {
-        border-top-color: #fff;
-        border-bottom-color: #fff;
+        border-top-color: #f87602;
+        border-bottom-color: #f87602;
     }
 
     .navbar .nav-user-pic {
@@ -560,7 +571,13 @@ form {
 
     .navbar .badge {
         margin-left: 5px;
+
+    .navbar-light {
+        background: #fff;
+        color: #f87602;
+        }
     }
+}
 
 
 /* Sidebar */
@@ -619,7 +636,7 @@ form {
         .sidebar .navi > li > a:hover, .sidebar .navi > li.open > a {
             border-bottom: 1px solid #222;
             background-color: #222;
-            color: #fff;
+            color: #f85602;
         }
 
     .sidebar .navi li ul {
@@ -825,7 +842,7 @@ form {
 
         .pagination ul > li > a:hover {
             color: #333;
-            background: #fafafa;
+            background: #f85602;
         }
 
 /* Page head */
@@ -942,7 +959,7 @@ form {
     .widget.wred .widget-head {
         background-color: @color_important;
         border: 1px solid @color_important;
-        color: #fff;
+        color: #f87602;
     }
 
     .widget.wlightblue .widget-head {
@@ -1328,36 +1345,24 @@ body {
     background-color: #FFF;
 }
 
-.navbar-inverse {
-    background-color: #333;
-}
-
 .sidebar-widget form {
     margin: 0em -1em;
 }
 
 .sidebar .navi > li > a {
-    background-color: #333;
+    background-color: #f87602;
 }
 
 .sidebar .navi li ul li a {
-    color: #fff;
+    color: #ff9500;
 }
 
     .sidebar .navi li ul li a:hover {
-        color: @color_lightblue;
+        color: #ef9500
     }
 
     .sidebar .navi li ul li a:disabled {
         color: #999;
-    }
-
-.navbar-inverse .btn-navbar {
-    background-color: #333;
-}
-
-    .navbar-inverse .btn-navbar:hover {
-        background-color: #333;
     }
 
 .sidebar {
@@ -1532,15 +1537,25 @@ small {
     margin: auto;
 }
 
+.nav > li > a {
+    &:hover, &:focus {
+
+    }
+}
+
 .navbar .navbar-brand {
     /*background: url(../images/gg.png) no-repeat left top;*/
     margin: 0 1em;
     height: 45px;
+    img {
+        margin-top: -10px;
+    }
 }
 
 .navbar .brand-title {
     /*margin-left: 4em;*/
-    color: #FFFFFF;
+    color: @laranjadf;
+    font-family: 'Comfortaa', cursive;
 }
 
 .navbar-logo img {
@@ -1979,8 +1994,13 @@ a {
 
 .login {
   background-color: #cccccc;
-  background-image: url("/src/client/images/background-coins.jpg");	
+  background-image: url("/src/client/images/dollar-jar.jpg");	
   height: 100%;
+
+  input.form-control, select.form-control, textarea.form-control {
+      width: 80%;
+  }
+
 }
 
 .container {	
@@ -1999,7 +2019,7 @@ a {
   margin: 0 auto;
   // background-color: #f87602;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
   border-radius: 5%;
   text-align: center;
 //   border: none;
@@ -2010,6 +2030,8 @@ a {
     background-color: #fff;
     color: #f87602;
     border: none;
+    border-radius: 5px;
+    margin: 30px 0 -10px 0;
   }
   .btn.btn-primary:hover {
     background-color: #ff9500;
@@ -2017,14 +2039,36 @@ a {
     border: none;
   }
 
+  
+
   img {
       margin: 0 auto;
       margin-bottom: 20px;
-      background-color: #f87602;
+      background-color: #fff;
         border-radius: 10px;
   }
 
   
+}
+
+.widget.wviolet {
+
+    .progress-bar {
+        background-color: @laranjapg;
+    }
+
+    .text-info {
+        color: #777;
+    }
+    .widget-head {
+        background-color: #f87602;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        .page-title {
+            color: #fff;
+        }
+    } 
 }
 
 /*#endregion */
