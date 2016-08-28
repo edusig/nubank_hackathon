@@ -85,10 +85,15 @@
 
       function init() {
         handleRoutingErrors();
+        checkLogin();
         updateDocTitle();
       }
 
       function getStates() { return $state.get(); }
+
+      function checkLogin(){
+        
+      }
 
       function updateDocTitle() {
         $rootScope.$on('$stateChangeSuccess',

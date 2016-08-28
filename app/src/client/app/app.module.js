@@ -3,12 +3,10 @@
 
   angular.module('app', [
     'app.core',
-    'app.widgets',
-    'app.admin',
-    'app.dashboard',
-    'app.objetivos',
     'app.layout',
-    'app.extrato'
+    'app.extrato',
+    // 'app.objetivos',
+    'app.login'
   ]);
 
 })();

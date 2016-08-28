@@ -10,20 +10,8 @@
   <div class="navbar-collapse collapse" uib-collapse="isCollapsed">
     <div class="pull-right navbar-logo">
       <ul class="nav navbar-nav pull-right">
-        <li>
-          <a ng-href="{{vm.navline.link}}" target="_blank">
-                        {{vm.navline.text}}
-                    </a>
-        </li>
-        <li class="dropdown dropdown-big">
-          <a href="http://www.angularjs.org" target="_blank">
-            <img src="images/AngularJS-small.png" />
-          </a>
-        </li>
-        <li>
-          <a href="http://www.gulpjs.com/" target="_blank">
-            <img src="images/gulp-tiny.png" />
-          </a>
+        <li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
+          <a ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
         </li>
       </ul>
     </div>

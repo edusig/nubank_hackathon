@@ -26,26 +26,6 @@
                     return vm.objetivos;
                 });
             }
-/*
-            function getObjective() {
-                return [
-                    {
-                    'titulo': 'Casa',
-                    'progresso': '25%',
-                    'icone': ''
-                    },
-                    {
-                    'titulo': 'Tattoo',
-                    'progresso': '90%',
-                    'icone': ''
-                    },
-                    {
-                    'titulo': 'Viagem Japão',
-                    'progresso': '0%',
-                    'icone': ''
-                    }
-                ]
-            }
-*/
+
         }
 })();
