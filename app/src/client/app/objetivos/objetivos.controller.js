@@ -29,6 +29,7 @@
                         temp.fromNow = moment(temp.target_date, 'YYYYMM').fromNow();
                         vm.objetivos.push(temp);
                     }
+                    console.log(vm.objetivos);
                     return vm.objetivos;
                 });
             }

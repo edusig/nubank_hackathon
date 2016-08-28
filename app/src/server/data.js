@@ -19,10 +19,10 @@ function getExtrato(){
 
 function getObjectives(){
   return [
-    { id: 1, name : 'Intercâmbio', target_vl : 5000.0, current_vl : 1000.0, target_date : 201712 }, 
-    { id: 2, name : 'Tattoo', target_vl : 800.0, current_vl : 50.0, target_date : 201612 },
-    { id: 3, name : 'Notebook', target_vl : 2000.0, current_vl : 250.0, target_date : 201706 },
-    { id: 4, name : 'Viagem', target_vl : 1500.0, current_vl : 400.0, target_date : 201801 },
+    { id: 1, name : 'Intercâmbio', target_vl : 5000.0, current_vl : 1000.0, target_date : 201712, icon: '/images/worldwide.png' }, 
+    { id: 2, name : 'Tattoo', target_vl : 800.0, current_vl : 50.0, target_date : 201612, icon: '/images/tattoo.png' },
+    { id: 3, name : 'Notebook', target_vl : 2000.0, current_vl : 250.0, target_date : 201706, icon: '/images/laptop.png' },
+    { id: 4, name : 'Viagem', target_vl : 1500.0, current_vl : 400.0, target_date : 201801, icon: '/images/map.png' },
   ];
 }
 

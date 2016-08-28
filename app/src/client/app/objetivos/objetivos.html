@@ -8,6 +8,9 @@
           <div class="widget-content">
             <div ng-repeat="objetivo in vm.objetivos" class="col-xs-12">
                 <div class="row">
+                  <span class="pull-left objective-icon" ng-if="objetivo.icon">
+                    <img ng-src="{{objetivo.icon}}" height="24" />
+                  </span>
                   <h5 class="pull-left">{{objetivo.name}} <small>({{objetivo.current_vl | currency}} de {{objetivo.target_vl | currency}}) {{objetivo.fromNow}}</small> </h5>
                 </div>
                 <div class="row">
