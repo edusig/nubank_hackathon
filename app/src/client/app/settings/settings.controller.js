@@ -8,6 +8,12 @@
     SettingsController.$inject = ['$q', 'dataservice', 'logger'];
     function SettingsController($q, dataservice, logger) {
         var settingsCtrl = this;
-        var objetivos = ['Viagem', 'Alimentação', 'Lazer', 'Vestuário', 'Transporte'];
+        settingsCtrl.objetivos = ['Viagem', 'Alimentação', 'Lazer', 'Vestuário', 'Transporte'];
+        settingsCtrl.esconder = true;
+        settingsCtrl.esconde = function() {
+            console.log(settingsCtrl.esconder);
+            settingsCtrl.esconder = ! settingsCtrl.esconder;
+            console.log(settingsCtrl.esconder);
+        }
     }
 })();
