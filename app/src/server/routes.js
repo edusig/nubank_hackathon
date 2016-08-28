@@ -12,19 +12,19 @@ module.exports = router;
 
 //////////////
 
-function getData(type) {
+function getData (type) {
   return function(req, res, next) {
     res.status(200).send(data[type]);
-  }
+  };
 }
 
-function getObjectives(req, res, next) {
+function getObjectives (req, res, next) {
   var id = +req.params.id;
-  var objective = data.objectives.filter( function( o ) {
+  var objective = data.objectives.filter(function(o) {
     return o.id === id;
   })[0];
 
-  if ( objective ) {
+  if (objective) {
     res.status(200).send(objective);
   } else {
     four0four.send404(req, res, 'objective ' + id + ' not found');

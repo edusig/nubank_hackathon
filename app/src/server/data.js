@@ -11,7 +11,7 @@ function getExtrato(){
     { id : 3, category : 'Alimentação', name : 'Starbucks', vl_credito : 12.90, vl_troco : 1.29, vl_final : 14.19 },
     { id : 4, category : 'Vestuário', name : 'Le Lis Blanc', vl_credito : 79.90, vl_troco : 7.99, vl_final : 87.89 },
     { id : 5, category : 'Vestuário', name : 'Santa Lolla', vl_credito : 156.70, vl_troco : 15.67, vl_final : 172.37 },
-  ]
+  ];
 }
 
 function getObjectives(){
@@ -20,7 +20,7 @@ function getObjectives(){
     { id: 2, name : 'Tattoo', target_vl : 800.0, current_vl : 50.0, target_date : 201612 },
     { id: 3, name : 'Notebook', target_vl : 2000.0, current_vl : 250.0, target_date : 201706 },
     { id: 4, name : 'Viagem', target_vl : 1500.0, current_vl : 400.0, target_date : 201801 },
-  ]
+  ];
 }
 
 function getSettings(){
@@ -29,5 +29,5 @@ function getSettings(){
     minChangeValue : 1.00,
     usePercentage : true,
     changePercentage : 10,
-  }
+  };
 }
