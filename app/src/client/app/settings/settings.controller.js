@@ -8,6 +8,6 @@
     SettingsController.$inject = ['$q', 'dataservice', 'logger'];
     function SettingsController($q, dataservice, logger) {
         var settingsCtrl = this;
-
+        var objetivos = ['Viagem', 'Alimentação', 'Lazer', 'Vestuário', 'Transporte'];
     }
 })();
