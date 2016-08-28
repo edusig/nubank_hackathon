@@ -11,6 +11,9 @@ function getExtrato(){
     { id : 3, category : 'Alimentação', name : 'Starbucks', vl_credito : 12.90, vl_troco : 1.29, vl_final : 14.19 },
     { id : 4, category : 'Vestuário', name : 'Le Lis Blanc', vl_credito : 79.90, vl_troco : 7.99, vl_final : 87.89 },
     { id : 5, category : 'Vestuário', name : 'Santa Lolla', vl_credito : 156.70, vl_troco : 15.67, vl_final : 172.37 },
+    { id : 6, category : 'Alimentação', name : 'The Fifties', vl_credito : 65.10, vl_troco : 6.51, vl_final : 71.61 },
+    { id : 7, category : 'Transporte', name : 'Uber', vl_credito : 20.17, vl_troco : 2.01, vl_final : 22.18 },
+    { id : 8, category : 'Transporte', name : 'Uber', vl_credito : 23.15, vl_troco : 2.31, vl_final : 25.46 },
   ];
 }
 
