@@ -2,27 +2,31 @@ var router = require('express').Router();
 var four0four = require('./utils/404')();
 var data = require('./data');
 
-router.get('/people', getPeople);
-router.get('/person/:id', getPerson);
+router.get('/extrato', getData('extrato'));
+router.get('/objectives', getData('objectives'));
+router.get('/objectives/:id', getObjectives);
+router.get('/settings', getData('settings'));
 router.get('/*', four0four.notFoundMiddleware);
 
 module.exports = router;
 
 //////////////
 
-function getPeople(req, res, next) {
-  res.status(200).send(data.people);
+function getData(type) {
+  return function(req, res, next) {
+    res.status(200).send(data[type]);
+  }
 }
 
-function getPerson(req, res, next) {
+function getObjectives(req, res, next) {
   var id = +req.params.id;
-  var person = data.people.filter(function(p) {
-    return p.id === id;
+  var objective = data.objectives.filter( function( o ) {
+    return o.id === id;
   })[0];
 
-  if (person) {
-    res.status(200).send(person);
+  if ( objective ) {
+    res.status(200).send(objective);
   } else {
-    four0four.send404(req, res, 'person ' + id + ' not found');
+    four0four.send404(req, res, 'objective ' + id + ' not found');
   }
 }
