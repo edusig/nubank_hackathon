@@ -6,6 +6,7 @@
     'app.layout',
     'app.extrato',
     'app.objetivos',
+    'app.historico',
     'app.settings',
     'app.login'
   ]);
