@@ -22,7 +22,7 @@
           controllerAs: 'extratoCtrl',
           title: 'Extrato',
           settings: {
-            nav: 3,
+            nav: 2,
             content: '<i class="fa fa-lock"></i> Extrato'
           }
         }

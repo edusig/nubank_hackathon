@@ -4,8 +4,15 @@
 @color_warning: #f88529;
 @color_important: #fa3031;
 @color_violet: #932ab6;
+@laranjadf: #f87602;
+@laranjahv: #ff9500;
+@laranjapr: #ff9b02;
+@pumpkin: #d35400;
+
+
 
 @import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/css?family=Comfortaa';
 
 * {
     /*-webkit-box-shadow: none;
@@ -80,7 +87,7 @@ body {
     line-height: 23px;
     color: #666;
     background: #111;
-    padding-top: 45px;
+    // padding-top: 45px;
     -webkit-font-smoothing: antialiased;
     font-family: 'Roboto'
 }
@@ -201,11 +208,13 @@ a.btn {
 /* Button colors */
 
 .btn.btn-primary {
-    background: @color_blue;
+    background:  #f87602;
+    color: #fff;
 }
 
     .btn.btn-primary:hover {
-        background: #0f608b;
+        background:  #ff9500;
+        color: #fff;
     }
 
 .btn.btn-info {
@@ -217,11 +226,13 @@ a.btn {
     }
 
 .btn.btn-success {
-    background: @color_success;
+    background:  #f87602;
+    color: #fff;
 }
 
     .btn.btn-success:hover {
-        background: #36a530;
+        background:  #ff9500;
+        color: #fff;
     }
 
 .btn.btn-warning {
@@ -532,16 +543,21 @@ form {
 /* Navbar */
 
 .navbar {
-    background: #000;
-}
+    background: #fff;
+    color: #f87602;
 
-    .navbar .container {
+    .container {
         width: 97%;
     }
 
-    .navbar .nav > li > a {
+
+    .nav > li > a {
         font-size: 13px;
-        color: #fff;
+        color: #f87602;
+        &:active, &:hover, &:focus {
+            background-color: @laranjapr;
+            color: #fff;
+        }
     }
 
     .navbar i {
@@ -549,8 +565,8 @@ form {
     }
 
     .navbar .caret {
-        border-top-color: #fff;
-        border-bottom-color: #fff;
+        border-top-color: #f87602;
+        border-bottom-color: #f87602;
     }
 
     .navbar .nav-user-pic {
@@ -560,7 +576,17 @@ form {
 
     .navbar .badge {
         margin-left: 5px;
+
     }
+    .navbar-light {
+        background: #fff;
+        color: #f87602;
+        }
+    .nav li.current > a {
+        background-color: #f87602;
+        color: #fff;
+    }
+}
 
 
 /* Sidebar */
@@ -619,7 +645,7 @@ form {
         .sidebar .navi > li > a:hover, .sidebar .navi > li.open > a {
             border-bottom: 1px solid #222;
             background-color: #222;
-            color: #fff;
+            color: #f85602;
         }
 
     .sidebar .navi li ul {
@@ -794,15 +820,21 @@ form {
 
 .mainbar {
     margin: 0 auto;
-    width: 960px;
     background: #fff;
     min-height: 900px;
+    margin-top: 50px;
 }
 
     .mainbar .container {
         width: 100%;
         padding: 0;
     }
+
+@media (min-width: 960px) {
+    .mainbar {
+        width: 960px;
+    }
+}
 
 /* Pagination*/
 
@@ -820,7 +852,7 @@ form {
 
         .pagination ul > li > a:hover {
             color: #333;
-            background: #fafafa;
+            background: #f85602;
         }
 
 /* Page head */
@@ -842,7 +874,13 @@ form {
 
 .mainbar .matter {
     border-top: 0px solid #ddd;
-    margin: 2em;
+    margin: 10px;
+}
+
+@media (min-width: 960px) {
+    .matter {
+        margin: 2em;
+    }
 }
 
 /* Widget */
@@ -931,7 +969,7 @@ form {
     .widget.wred .widget-head {
         background-color: @color_important;
         border: 1px solid @color_important;
-        color: #fff;
+        color: #f87602;
     }
 
     .widget.wlightblue .widget-head {
@@ -1317,36 +1355,24 @@ body {
     background-color: #FFF;
 }
 
-.navbar-inverse {
-    background-color: #333;
-}
-
 .sidebar-widget form {
     margin: 0em -1em;
 }
 
 .sidebar .navi > li > a {
-    background-color: #333;
+    background-color: #f87602;
 }
 
 .sidebar .navi li ul li a {
-    color: #fff;
+    color: #ff9500;
 }
 
     .sidebar .navi li ul li a:hover {
-        color: @color_lightblue;
+        color: #ef9500
     }
 
     .sidebar .navi li ul li a:disabled {
         color: #999;
-    }
-
-.navbar-inverse .btn-navbar {
-    background-color: #333;
-}
-
-    .navbar-inverse .btn-navbar:hover {
-        background-color: #333;
     }
 
 .sidebar {
@@ -1520,15 +1546,25 @@ small {
     margin: auto;
 }
 
+.nav > li > a {
+    &:hover, &:focus {
+
+    }
+}
+
 .navbar .navbar-brand {
     /*background: url(../images/gg.png) no-repeat left top;*/
     margin: 0 1em;
     height: 45px;
+    img {
+        margin-top: -10px;
+    }
 }
 
 .navbar .brand-title {
     /*margin-left: 4em;*/
-    color: #FFFFFF;
+    color: @laranjadf;
+    font-family: 'Comfortaa', cursive;
 }
 
 .navbar-logo img {
@@ -1888,6 +1924,8 @@ a {
     }
 }
 
+
+
 @media (max-width: 480px) {
     input.form-control, select.form-control, textarea.form-control {
         width: 70%;
@@ -1946,10 +1984,6 @@ a {
     }
 }
 
-.nav li.current {
-    background-color: #f87602;
-}
-
 .content {
     min-height: 100%;
 }
@@ -1957,21 +1991,21 @@ a {
 .container.login {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 180px;
-    padding-bottom: 180px;
-    height: 100%;
+    padding: 0 3%; 
+    height: 100vh;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .login {
   background-color: #cccccc;
-  background-image: url("/src/client/images/background-coins.jpg");	
+  background-image: url("/src/client/images/dollar-jar.jpg");	
   height: 100%;
-}
 
-.container {	
-	margin-top: 80px;
-  margin-bottom: 80px;
+  input.form-control, select.form-control, textarea.form-control {
+      width: 80%;
+  }
+
 }
 
 .navbar-collapse collapse {
@@ -1980,13 +2014,16 @@ a {
 }
 
 .form-signin {
-  max-width: 450px;
-  padding: 15px 35px 45px;
+  position: relative;
+  top: 25%;
+  max-width: 500px;
+  padding: 30px 15px;
   margin: 0 auto;
   // background-color: #f87602;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
   border-radius: 5%;
+  text-align: center;
 //   border: none;
 //   color: #fff;
   font-size: 0.8em;
@@ -1995,6 +2032,8 @@ a {
     background-color: #fff;
     color: #f87602;
     border: none;
+    border-radius: 5px;
+    margin: 30px 0 -10px 0;
   }
   .btn.btn-primary:hover {
     background-color: #ff9500;
@@ -2003,12 +2042,33 @@ a {
   }
 
   img {
+      margin: 0 auto;
       margin-bottom: 20px;
-      background-color: #f87602;
+      background-color: #fff;
         border-radius: 10px;
   }
 
   
+}
+
+.widget.wviolet {
+
+    .progress-bar {
+        background-color: @laranjapr;
+    }
+
+    .text-info {
+        color: #777;
+    }
+    .widget-head {
+        background-color: #f87602;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        .page-title {
+            color: #fff;
+        }
+    } 
 }
 
 /*#endregion */

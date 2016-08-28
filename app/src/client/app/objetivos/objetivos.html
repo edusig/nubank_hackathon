@@ -5,12 +5,33 @@
         <div class="col-md-12">
           <div class="widget wviolet">
           <div ht-widget-header title="{{vm.title}}"></div>
-          <div ng-repeat="objetivo in vm.objetivos">
-              <h5>{{objetivo.name}} <small>({{objetivo.current_vl | currency}} de {{objetivo.target_vl | currency}})</small> </h5>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{objetivo.current_vl / objetivo.target_vl * 100}}%;">{{objetivo.current_vl / objetivo.target_vl * 100 | number: 1}}</div>
-            </div>
+          <div ng-repeat="objetivo in vm.objetivos" class="col-xs-12">
+              <div class="row">
+                <h5 class="pull-left">{{objetivo.name}} <small>({{objetivo.current_vl | currency}} de {{objetivo.target_vl | currency}}) {{objetivo.fromNow}}</small> </h5>
+              </div>
+              <div class="row">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{objetivo.current_vl / objetivo.target_vl * 100}}%;">{{objetivo.current_vl / objetivo.target_vl * 100 | number: 1}}%</div>
+                </div>
+              </div>
           </div>
+          <hr>
+          <h4>Novo Objetivo</h4>
+          <form class="form-inline" ng-submit="vm.addObjective(vm.ob_name, vm.ob_vl, vm.ob_limit)">
+            <div class="form-group">
+              <label for="objetivo">Objetivo</label>
+              <input type="text" class="form-control" id="objetivo" placeholder="Comprar uma bicicleta" ng-model="vm.ob_name" required>
+            </div>
+            <div class="form-group">
+              <label for="target_value">Valor</label>
+              <input type="number" min="0" step="any" class="form-control" id="target_value" placeholder="300" ng-model="vm.ob_vl" required>
+            </div>
+            <div class="form-group">
+              <label for="limit_date">Data limite</label>
+              <input type="text" class="form-control" id="limit_date" placeholder="10/2018" ng-model="vm.ob_limit" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adcionar Objetivo</button>
+          </form>
         </div>
       </div>
     </div>
