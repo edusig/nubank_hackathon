@@ -11,7 +11,8 @@
     var service = {
       getPeople: getPeople,
       getMessageCount: getMessageCount,
-      getExtrato: getExtrato
+      getExtrato: getExtrato,
+      getObjectives: getObjectives
     };
 
     return service;
@@ -26,6 +27,12 @@
 
     function getExtrato() {
       return $http.get('/api/extrato')
+        .then(success)
+        .catch(fail);
+    }
+
+    function getObjectives() {
+      return $http.get('/api/objectives')
         .then(success)
         .catch(fail);
     }

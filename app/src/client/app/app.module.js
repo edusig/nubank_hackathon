@@ -5,6 +5,7 @@
     'app.core',
     'app.layout',
     'app.extrato',
+    'app.objetivos',
     'app.settings',
     'app.login'
   ]);
