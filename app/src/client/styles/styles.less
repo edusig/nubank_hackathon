@@ -794,7 +794,6 @@ form {
 
 .mainbar {
     margin: 0 auto;
-    width: 960px;
     background: #fff;
     min-height: 900px;
 }
@@ -803,6 +802,12 @@ form {
         width: 100%;
         padding: 0;
     }
+
+@media (min-width: 960px) {
+    .mainbar {
+        width: 960px;
+    }
+}
 
 /* Pagination*/
 
@@ -842,7 +847,13 @@ form {
 
 .mainbar .matter {
     border-top: 0px solid #ddd;
-    margin: 2em;
+    margin: 10px;
+}
+
+@media (min-width: 960px) {
+    .matter {
+        margin: 2em;
+    }
 }
 
 /* Widget */
@@ -1394,7 +1405,7 @@ textarea.form-control {
     /*width: 205px;*/
     display: inline;
     display: block;
-    width: 80%;
+    // width: 80%;
     max-width: 30em;
 }
 
@@ -1958,10 +1969,12 @@ a {
 .container.login {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding: 0 3%; 
+    padding-top: 30%;
+    padding-bottom: 30%;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .login {
@@ -1971,8 +1984,8 @@ a {
 }
 
 .container {	
-	margin-top: 80px;
-  margin-bottom: 80px;
+// 	margin-top: 80px;
+//   margin-bottom: 80px;
 }
 
 .navbar-collapse collapse {
@@ -1981,13 +1994,14 @@ a {
 }
 
 .form-signin {
-  max-width: 450px;
-  padding: 15px 35px 45px;
+  max-width: 500px;
+  padding: 30px 15px;
   margin: 0 auto;
   // background-color: #f87602;
   background-color: #fff;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 5%;
+  text-align: center;
 //   border: none;
 //   color: #fff;
   font-size: 0.8em;
@@ -2004,6 +2018,7 @@ a {
   }
 
   img {
+      margin: 0 auto;
       margin-bottom: 20px;
       background-color: #f87602;
         border-radius: 10px;
