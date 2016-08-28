@@ -18,10 +18,10 @@
       templateUrl: 'app/layout/ht-top-nav.html'
     };
 
-    TopNavController.$inject = ['$scope', 'routerHelper', '$state'];
+    TopNavController.$inject = ['$scope', 'routerHelper', '$state', 'authservice'];
 
     /* @ngInject */
-    function TopNavController($scope, routerHelper, $state) {
+    function TopNavController($scope, routerHelper, $state, authservice) {
       var vm = this;
       $scope.isCollapsed = true;
       var states = routerHelper.getStates();
@@ -30,7 +30,10 @@
 
       activate();
 
-      function activate() { getNavRoutes(); }
+      function activate() {
+        getNavRoutes();
+        vm.logged = isLogged();
+      }
 
       function getNavRoutes() {
         vm.navRoutes = states.filter(function(r) {
@@ -46,6 +49,13 @@
         }
         var menuName = route.title;
         return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
+      }
+
+      function isLogged(){
+        return authservice.isLogged();
+      }
+      function doLogout(){
+        return authservice.doLogout();
       }
     }
 

@@ -12,6 +12,9 @@
     vm.busyMessage = 'Carregando ...';
     vm.isBusy = true;
     $rootScope.showSplash = true;
+    vm.navline = {
+      title : 'Troco',
+    };
 
     activate();
 
