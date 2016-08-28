@@ -1,11 +1,13 @@
 var router = require('express').Router();
 var four0four = require('./utils/404')();
 var data = require('./data');
+var auth = require('./auth');
 
 router.get('/extrato', getData('extrato'));
 router.get('/objectives', getData('objectives'));
 router.get('/objectives/:id', getObjectives);
 router.get('/settings', getData('settings'));
+router.post('/login', doLogin);
 router.get('/*', four0four.notFoundMiddleware);
 
 module.exports = router;
@@ -29,4 +31,10 @@ function getObjectives (req, res, next) {
   } else {
     four0four.send404(req, res, 'objective ' + id + ' not found');
   }
+}
+
+function doLogin(req, res, next) {
+  var username = req.body.username;
+  var password = req.body.password;
+  res.status(200).send({result: auth.doLogin(username, password)});
 }
