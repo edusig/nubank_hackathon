@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.objetivos')
+    .module('app.historico')
     .run(appRun);
 
   appRun.$inject = ['routerHelper'];
@@ -14,16 +14,16 @@
   function getStates() {
     return [
       {
-        state: 'objetivos',
+        state: 'historico',
         config: {
-          url: '/objetivos',
-          templateUrl: 'app/objetivos/objetivos.html',
-          controller: 'ObjetivosController',
+          url: '/historico',
+          templateUrl: 'app/historico/historico.html',
+          controller: 'HistoricoController',
           controllerAs: 'vm',
-          title: 'objetivos',
+          title: 'historico',
           settings: {
-            nav: 1,
-            content: '<i class="fa fa-lock"></i> Objetivos'
+            nav: 5,
+            content: '<i class="fa fa-lock"></i> Histórico'
           }
         }
       }

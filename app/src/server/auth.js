@@ -5,6 +5,7 @@ var auth = {
 };
 
 function doLogin(username, password){
+    console.log(username, password);
     if (username === 'heloa' && password === 'teste123') {
         auth.logged = true;
         return true;
