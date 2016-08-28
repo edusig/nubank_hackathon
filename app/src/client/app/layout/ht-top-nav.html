@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top navbar-light">
+<nav class="navbar navbar-fixed-top navbar-light" ng-if="!vm.isLogin()">
   <div class="navbar-header">
     <a href="/" class="navbar-brand"><img src="/src/client/images/troco3.png" height="40"></a>
     <a class="btn navbar-btn navbar-toggle" ng-click="isCollapsed = !isCollapsed">
@@ -8,7 +8,7 @@
     </a>
   </div>
   <div class="navbar-collapse collapse" uib-collapse="isCollapsed">
-    <div class="pull-right navbar-logo" ng-if="!vm.isLogin()">
+    <div class="pull-right navbar-logo">
       <ul class="nav navbar-nav pull-right">
         <li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes" ng-if="r.title !== 'Login'">
           <a ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
