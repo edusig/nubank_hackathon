@@ -1,13 +1,18 @@
-<div class="container">
-    <div class="jumbotron">
-        <form class="form-signin">
-            <h2 class="form-signin-heading">Login</h2>
-            <label for="inputEmail" class="sr-only">E-mail</label>
-            <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" ng-model="loginCtrl.username" required autofocus>
-            <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" ng-model="loginCtrl.password" required>
-            <button class="btn btn-lg btn-primary btn-block" ng-click="loginCtrl.doLogin()" type="submit">Entrar</button>
-        </form>
-    </div>  <!-- /jumbotron -->
-</div> <!-- /container -->
-
+<div class="container login">
+    <form class="form-signin form-horizontal">
+        <img src="/src/client/images/troco3.png" height="100">
+        <div class="form-group">
+            <label for="inputEmail" class="col-sm-3 col-xs-3 control-label">E-mail</label>
+            <div class="col-sm-9 col-xs-9">
+                <input type="input" id="inputEmail" class="form-control" placeholder="E-mail" ng-model="loginCtrl.username" required autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-3 col-xs-3 control-label">Senha</label>
+            <div class="col-sm-9 col-xs-9">
+                <input type="password" id="inputPassword" class="form-control" ng-model="loginCtrl.password" placeholder="Senha" required>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="loginCtrl.doLogin()" type="submit">Entrar</button>
+    </form>
+</div>

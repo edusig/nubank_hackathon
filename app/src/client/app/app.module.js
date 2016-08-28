@@ -8,7 +8,8 @@
     'app.objetivos',
     'app.historico',
     'app.settings',
-    'app.login'
+    'app.login',
+    'app.cadastro-cartao'
   ]);
 
 })();

@@ -65,8 +65,9 @@ gulp.task('styles', ['clean-styles'], function() {
   return gulp
     .src(config.less)
     .pipe($.plumber()) // exit gracefully if something fails after this
+    .pipe($.concat('styles.css'))
     .pipe($.less())
-    //        .on('error', errorLogger) // more verbose and dupe output. requires emit.
+    .on('error', errorLogger) // more verbose and dupe output. requires emit.
     .pipe($.autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
     .pipe(gulp.dest(config.temp));
 });
@@ -619,12 +620,12 @@ function bytediffFormatter(data) {
 /**
  * Log an error message and emit the end of a task
  */
-//function errorLogger(error) {
-//    log('*** Start of Error ***');
-//    log(error);
-//    log('*** End of Error ***');
-//    this.emit('end');
-//}
+function errorLogger(error) {
+   log('*** Start of Error ***');
+   log(error);
+   log('*** End of Error ***');
+   this.emit('end');
+}
 
 /**
  * Format a number as a percentage
