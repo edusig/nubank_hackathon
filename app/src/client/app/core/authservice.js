@@ -27,7 +27,7 @@
     }
 
     function isLogged() {
-        return $http.get('/api/isLogged')
+        return $http.get('/api/logged')
         .then(success)
         .catch(fail);
     }

@@ -52,7 +52,7 @@
       }
 
       function isLogged(){
-        return authservice.isLogged();
+        return authservice.isLogged().logged;
       }
       function doLogout(){
         return authservice.doLogout();
