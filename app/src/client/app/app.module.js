@@ -7,7 +7,8 @@
     'app.admin',
     'app.dashboard',
     'app.objetivos',
-    'app.layout'
+    'app.layout',
+    'app.extrato'
   ]);
 
 })();

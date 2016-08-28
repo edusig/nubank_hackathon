@@ -13,8 +13,8 @@
   }
 
   var config = {
-    appErrorPrefix: '[troco Error] ',
-    appTitle: 'troco'
+    appErrorPrefix: '[Troco Error] ',
+    appTitle: 'Troco'
   };
 
   core.value('config', config);
