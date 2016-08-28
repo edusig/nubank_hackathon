@@ -26,13 +26,16 @@
       $scope.isCollapsed = true;
       var states = routerHelper.getStates();
       vm.isCurrent = isCurrent;
+      vm.isLogin = isLogin;
+      vm.doLogout = doLogout;
       $scope.isCurrent = isCurrent;
 
       activate();
 
       function activate() {
         getNavRoutes();
-        vm.logged = isLogged();
+        vm.logged = authservice.isLogged();
+        console.log(vm.logged);
       }
 
       function getNavRoutes() {
@@ -51,11 +54,15 @@
         return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
       }
 
-      function isLogged(){
-        return authservice.isLogged().logged;
+      function isLogin(){
+        return $state.current.name === 'login';
       }
+      
       function doLogout(){
-        return authservice.doLogout();
+        console.log('logout');
+        if ( authservice.doLogout() ) {
+          $state.go('login');
+        }
       }
     }
 

@@ -3,41 +3,44 @@
 
   angular
     .module('app.core')
-    .factory('authservice', authservice);
+    .service('authservice', authservice);
 
   authservice.$inject = ['$http', '$q', 'exception', 'logger'];
   /* @ngInject */
   function authservice($http, $q, exception, logger) {
+    var logged = false;
     var service = {
         doLogin : doLogin,
+        doLogout : doLogout,
         isLogged : isLogged,
     };
 
-    return service;
-
     function doLogin(username, password) {
       return $http.post('/api/login', {
-          data : {
-              username : username,
-              password : password,
-          }
+          username : username,
+          password : password,
       })
         .then(success)
         .catch(fail);
     }
 
-    function isLogged() {
-        return $http.get('/api/logged')
-        .then(success)
-        .catch(fail);
+    function doLogout() {
+      logged = false;
+      return true;
+    }
+
+    function isLogged(){
+      return logged;
     }
 
     function success(response) {
+      logged = response.data.result;
       return response.data;
     }
 
     function fail(e) {
       return exception.catcher('XHR Failed for getPeople')(e);
     }
+    return service;
   }
 })();

@@ -9,7 +9,6 @@ router.get('/objectives/:id', getObjectives);
 router.get('/settings', getData('settings'));
 router.post('/login', doLogin);
 router.post('/logout', doLogout);
-router.get('/logged', isLogged);
 router.get('/*', four0four.notFoundMiddleware);
 
 module.exports = router;
@@ -43,8 +42,4 @@ function doLogin(req, res, next) {
 
 function doLogout(req, res, next) {
   res.status(200).send(auth.doLogout);
-}
-
-function isLogged(req, res, next) {
-  res.status(200).send({logged: auth.logged});
 }

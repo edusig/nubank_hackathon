@@ -22,7 +22,7 @@
           controllerAs: 'vm',
           title: 'objetivos',
           settings: {
-            nav: 4,
+            nav: 1,
             content: '<i class="fa fa-lock"></i> Objetivos'
           }
         }
