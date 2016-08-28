@@ -7,7 +7,8 @@
     'app.extrato',
     'app.objetivos',
     'app.settings',
-    'app.login'
+    'app.login',
+    'app.cadastro-cartao'
   ]);
 
 })();

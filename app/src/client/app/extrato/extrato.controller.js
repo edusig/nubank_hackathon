@@ -5,9 +5,10 @@
         .module('app.extrato')
         .controller('ExtratoController', ExtratoController);
 
-    ExtratoController.$inject = ['$q', 'dataservice', 'logger'];
-    function ExtratoController($q, dataservice, logger) {
+    ExtratoController.$inject = ['$q', 'dataservice', 'logger', '_'];
+    function ExtratoController($q, dataservice, logger, _) {
         var extratoCtrl = this;
+        extratoCtrl.getTotal = getTotal;
 
         activate();
 
@@ -21,9 +22,14 @@
         function getExtrato() {
             return dataservice.getExtrato().then(function (data) {
                 extratoCtrl.extrato = data;
-                console.log('Extrato: ', data);
                 return extratoCtrl.extrato;
             });
+        }
+
+        function getTotal() {
+            return _.reduce(extratoCtrl.extrato, function (sum, n) {
+                return sum + n.vl_troco;
+            }, 0).toFixed(2);
         }
     }
 })();
