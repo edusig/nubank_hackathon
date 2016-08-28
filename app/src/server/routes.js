@@ -8,6 +8,7 @@ router.get('/objectives', getData('objectives'));
 router.get('/objectives/:id', getObjectives);
 router.get('/settings', getData('settings'));
 router.post('/login', doLogin);
+router.post('/logout', doLogout);
 router.get('/*', four0four.notFoundMiddleware);
 
 module.exports = router;
@@ -37,4 +38,8 @@ function doLogin(req, res, next) {
   var username = req.body.username;
   var password = req.body.password;
   res.status(200).send({result: auth.doLogin(username, password)});
+}
+
+function doLogout(req, res, next) {
+  res.status(200).send(auth.doLogout);
 }

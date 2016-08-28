@@ -1,19 +1,20 @@
-module.exports = function(){
-    var auth = {
-        doLogin : doLogin,
-        logged : isLogged(),
-    };
-    var logged = false;
-    function doLogin(username, password){
-        if (username === 'heloa' && password === 'teste123') {
-            logged = true;
-            return true;
-        }
-        logged = false;
-        return false;
-    }
-    function isLogged() {
-        return logged;
-    }
-    return auth;
+var auth = {
+    logged : false,
+    doLogin : doLogin,
+    doLogout: doLogout,
 };
+
+function doLogin(username, password){
+    console.log(username, password);
+    if (username === 'heloa' && password === 'teste123') {
+        auth.logged = true;
+        return true;
+    }
+    auth.logged = false;
+    return false;
+}
+function doLogout(){
+    auth.logged = false;
+    return true;
+}
+module.exports = auth; 

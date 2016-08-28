@@ -26,20 +26,22 @@
     };
 
     this.$get = RouterHelper;
-    RouterHelper.$inject = ['$location', '$rootScope', '$state', 'logger'];
+    RouterHelper.$inject = ['$location', '$rootScope', '$state', 'logger', 'authservice'];
     /* @ngInject */
-    function RouterHelper($location, $rootScope, $state, logger) {
+    function RouterHelper($location, $rootScope, $state, logger, authservice) {
       var handlingStateChangeError = false;
       var hasOtherwise = false;
       var stateCounts = {
         errors: 0,
         changes: 0
       };
+      var logged = false;
 
       var service = {
         configureStates: configureStates,
         getStates: getStates,
-        stateCounts: stateCounts
+        stateCounts: stateCounts,
+        logged : logged,
       };
 
       init();
@@ -92,7 +94,14 @@
       function getStates() { return $state.get(); }
 
       function checkLogin(){
-        
+        $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromParams){
+          logged = authservice.isLogged();
+          console.log('toState', toState);
+          if ( toState.name !== 'login' && !logged ) {
+            e.preventDefault();
+            $state.go('login');
+          }
+        });
       }
 
       function updateDocTitle() {
